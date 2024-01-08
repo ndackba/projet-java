@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculatrice</title>
+	<script>
+		function calculer() {
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			if (isNaN(num1) || isNaN(num2)) {
+				alert("Veuillez saisir des nombres valides.");
+				return;
+			}
+			if (num2 == 0) {
+				alert("La division par zéro n'est pas autorisée.");
+				return;
+			}
+			document.getElementById("somme").value = Number(num1) + Number(num2);
+			document.getElementById("multiplication").value = Number(num1) * Number(num2);
+			document.getElementById("division").value = Number(num1) / Number(num2);
+			document.getElementById("soustraction").value = Number(num1) - Number(num2);
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<label for="num1">Nombre 1:</label>
+		<input type="text" id="num1" name="num1"><br><br>
+		<label for="num2">Nombre 2:</label>
+		<input type="text" id="num2" name="num2"><br><br>
+		<input type="button" value="Calculer" onclick="calculer()"><br><br>
+		<label for="somme">Somme:</label>
+		<input type="text" id="somme" name="somme"><br><br>
+		<label for="multiplication">Multiplication:</label>
+		<input type="text" id="multiplication" name="multiplication"><br><br>
+		<label for="division">Division:</label>
+		<input type="text" id="division" name="division"><br><br>
+		<label for="soustraction">Soustraction:</label>
+		<input type="text" id="soustraction" name="soustraction"><br><br>
+	</form>
+</body>
+</html>
